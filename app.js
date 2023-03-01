@@ -233,7 +233,39 @@ const formatWithPadding = (formattedNum, symb, lengthPad) =>{
     return newString
 
 }
-console.log(formatWithPadding(1234, '*', 3))
-console.log(formatWithPadding(123, '0', 5))
-console.log(formatWithPadding(42, '*', 10))
-console.log(formatWithPadding(1234, '*', 3))
+// console.log(formatWithPadding(1234, '*', 3))
+// console.log(formatWithPadding(123, '0', 5))
+// console.log(formatWithPadding(42, '*', 10))
+// console.log(formatWithPadding(1234, '*', 3))
+
+
+/*-----------------------------------------------------------------
+Challenge: 11-isPalindrome
+Difficulty: Intermediate
+Prompt:
+- Write a function called isPalindrome that accepts a single string argument, then returns true or false depending upon whether or not the string is a palindrome.
+- A palindrome is a word or phrase that are the same forward or backward.
+- Casing and spaces are not included when considering whether or not a string is a palindrome.
+- If the length of the string is 0 or 1, return true.
+Examples:
+isPalindrome('SEI Rocks'); //=> false
+isPalindrome('rotor'); //=> true
+isPalindrome('A nut for a jar of tuna'); //=> true
+isPalindrome(''); //=> true
+-----------------------------------------------------------------*/
+const isPalindrome = (str) => {
+    let reverse = str.split('').reverse().join('').toLowerCase()
+    reverse = reverse.split(' ').join('')
+    let string = str.split(' ').join('').toLowerCase()
+    if (str.length === 0 || str.length === 1) {
+        return true
+    }
+    if (reverse === string) {
+        return true
+    } 
+    else return false
+}
+console.log(isPalindrome('SEI Rocks'))
+console.log(isPalindrome('rotor'))
+console.log(isPalindrome('A nut for a jar of tuna'))
+console.log(isPalindrome(''))
